@@ -1,0 +1,84 @@
+<!-- This is the Gallery page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page setup -->
+    <meta charset="UTF-8"> <!-- Supports all text characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Works on phones -->
+    <title>Vincent - Gallery</title> <!-- Title in browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Links to your CSS file -->
+</head>
+<body>
+    <!-- Top navigation bar - same on all pages -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul>
+                <!-- Navigation links to all 4 pages -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li> <!-- Current page -->
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="contract.html">Contract</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content of Gallery page -->
+    <main class="gallery-main">
+        <!-- Page title -->
+        <h1 class="page-title">Gallery</h1>
+        
+        <!-- Container for all painting images -->
+        <div class="gallery-container">
+            
+            <!-- PAINTING 1: Sunflowers -->
+            <div class="gallery-item">
+                <!-- Image of Sunflowers painting -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vincent_Willem_van_Gogh_127.jpg/250px-Vincent_Willem_van_Gogh_127.jpg" 
+                     alt="Sunflowers (1888)" 
+                     class="gallery-img">
+                <div class="gallery-info">
+                    <h3>Sunflowers (1888)</h3> <!-- Painting title -->
+                </div>
+            </div>
+
+            <!-- PAINTING 2: The Bedroom -->
+            <div class="gallery-item">
+                <img src="https://media.architecturaldigest.com/photos/56be5673202b83b31f121333/1:1/w_842,h_842,c_limit/airbnb-offers-chance-sleep-van-goghs-bedroom-01.png" 
+                     alt="The Bedroom (1888)" 
+                     class="gallery-img">
+                <div class="gallery-info">
+                    <h3>The Bedroom (1888)</h3>
+                </div>
+            </div>
+
+            <!-- PAINTING 3: Irises -->
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/1280px-Irises-Vincent_van_Gogh.jpg" 
+                     alt="Irises (1889)" 
+                     class="gallery-img">
+                <div class="gallery-info">
+                    <h3>Irises (1889)</h3>
+                </div>
+            </div>
+
+            <!-- PAINTING 4: Café Terrace at Night -->
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Vincent_van_Gogh_%281853-1890%29_Caféterras_bij_nacht_%28place_du_Forum%29_Kröller-Müller_Museum_Otterlo_23-8-2016_13-35-40.JPG" 
+                     alt="Café Terrace at Night (1888)" 
+                     class="gallery-img">
+                <div class="gallery-info">
+                    <h3>Café Terrace at Night (1888)</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom footer - same on all pages -->
+    <footer class="site-footer">
+        <p>Vincent Van Gogh Gallery</p>
+    </footer>
+    
+    <!-- Links to JavaScript file for any interactive features -->
+    <script src="script.js"></script>
+</body>
+</html>

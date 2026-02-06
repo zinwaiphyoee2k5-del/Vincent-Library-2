@@ -1,0 +1,76 @@
+<!-- =========================================================== -->
+<!-- FILE: biography.html - Biography Page                      -->
+<!-- PURPOSE: Shows Van Gogh's life story with portrait         -->
+<!-- DESIGN: Side-by-side layout (portrait left, text right)    -->
+<!-- =========================================================== -->
+
+<!-- This is the Biography page about Vincent van Gogh -->
+<!DOCTYPE html>
+<html lang="en"> <!-- English language -->
+<head>
+    <!-- ========== PAGE METADATA ========== -->
+    <meta charset="UTF-8"> <!-- Character encoding for special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsive -->
+    <title>Vincent - Biography</title> <!-- Shows in browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Links to CSS file -->
+</head>
+<body>
+    <!-- ========== HEADER (Same on all pages) ========== -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul>
+                <!-- Navigation Menu -->
+                <li><a href="index.html">Home</a></li> <!-- Link to Home page -->
+                <li><a href="gallery.html">Gallery</a></li> <!-- Link to Gallery page -->
+                <li><a href="biography.html" class="active">Biography</a></li> <!-- CURRENT PAGE -->
+                <li><a href="contract.html">Contract</a></li> <!-- Link to Contact page -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="biography-main">
+        <!-- Page Title -->
+        <h1 class="page-title">A Life of Passion</h1>
+        
+        <!-- ========== SIDE-BY-SIDE LAYOUT ========== -->
+        <!-- Container holds portrait (left) and text (right) -->
+        <div class="biography-container">
+            
+            <!-- ========== LEFT COLUMN: PORTRAIT ========== -->
+            <div class="portrait-column">
+                <!-- 
+                ⚠️ IMAGE REPLACEMENT INSTRUCTION:
+                Replace the URL below with your own portrait image
+                Example: <img src="your-portrait.jpg" alt="Description">
+                -->
+                <img src="https://media.vogue.fr/photos/5c8a55363d44a0083ccbef54/master/w_1600%2Cc_limit/GettyImages-625257378.jpg">
+                <!-- Caption that appears below the portrait -->
+                <p class="portrait-caption">Vincent van Gogh Self-Portrait</p>
+            </div>
+            
+            <!-- ========== RIGHT COLUMN: BIOGRAPHY TEXT ========== -->
+            <div class="text-column">
+                <!-- Paragraph 1: Introduction -->
+                <p>Vincent van Gogh (1853–1890) was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created approximately 2,100 artworks, including around 860 oil paintings.</p>
+                
+                <!-- Paragraph 2: Artistic style and challenges -->
+                <p>His work is characterized by bold colors and dramatic, impulsive, and expressive brushwork that contributed to the foundations of modern art. Although he struggled with mental illness and remained poor and virtually unknown throughout his life, his legacy now lives on in every corner of the globe.</p>
+                
+                <!-- Paragraph 3: Legacy -->
+                <p>Today, his masterpieces—from the swirling skies of The Starry Night to the vibrant canvases of his self-portraits—continue to inspire millions with their raw emotion and beauty.</p>
+            </div>
+            
+        </div>
+        <!-- ========== END SIDE-BY-SIDE LAYOUT ========== -->
+    </main>
+
+    <!-- ========== FOOTER (Same on all pages) ========== -->
+    <footer class="site-footer">
+        <p>Vincent Van Gogh Gallery</p> <!-- Copyright/credit text -->
+    </footer>
+    
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="script.js"></script> <!-- Links to JavaScript file -->
+</body>
+</html>

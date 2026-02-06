@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincent - Contract</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="contract.html" class="active">Contract</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTACT SECTION -->
+    <main class="contract-main">
+        <h1 class="page-title">Get in Touch with the Studio</h1>
+        
+        <div class="contact-content">
+            <p class="contact-description">Have a question about Vincent's work or the gallery? Send us a message below.</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Massage</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">SEND MASSAGE</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Vincent Van Gogh Gallery</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

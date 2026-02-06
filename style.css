@@ -1,0 +1,329 @@
+/* =========================================================== */
+/* FILE: style.css - Main Stylesheet                          */
+/* PURPOSE: Controls all visual styles for the website        */
+/* FEATURES: Responsive design, 4-page consistent styling     */
+/* =========================================================== */
+
+/* ==================== 1. RESET & BASE STYLES ==================== */
+/* Clears default browser styles for consistency */
+* {
+    margin: 0;      /* Remove default margins */
+    padding: 0;     /* Remove default padding */
+    box-sizing: border-box; /* Include padding/border in element width */
+}
+
+/* Base body styling applied to ALL pages */
+body {
+    font-family: 'Georgia', serif; /* Elegant, readable font */
+    line-height: 1.6;              /* Space between text lines */
+    color: #333;                   /* Dark gray text color */
+    background-color: #fefefe;     /* Off-white background */
+    min-height: 100vh;             /* Minimum full viewport height */
+    display: flex;                 /* Flexbox for layout */
+    flex-direction: column;        /* Stack: header, main, footer */
+}
+
+/* ==================== 2. HEADER & NAVIGATION ==================== */
+/* Top navigation bar - appears on all pages */
+.site-header {
+    background-color: #2a2a2a;     /* Dark charcoal */
+    padding: 1.5rem 0;             /* Space above/below navigation */
+}
+
+/* Navigation menu container */
+.main-nav ul {
+    display: flex;                 /* Horizontal layout */
+    justify-content: center;       /* Center menu items */
+    list-style: none;              /* Remove bullet points */
+    gap: 3rem;                     /* Space between menu items */
+}
+
+/* Navigation links styling */
+.main-nav a {
+    color: #f5f5f5;               /* Light gray text */
+    text-decoration: none;         /* Remove underline */
+    font-size: 1.2rem;             /* Text size */
+    padding: 0.5rem 1rem;          /* Clickable area */
+    transition: color 0.3s;        /* Smooth color change */
+}
+
+/* Hover effect and current page indicator */
+.main-nav a:hover,
+.main-nav a.active {
+    color: #ffcc00;                /* Golden yellow */
+}
+
+/* ==================== 3. HOME PAGE HERO ==================== */
+/* Full-screen banner on home page */
+.hero-section {
+    flex-grow: 1;                  /* Takes available space */
+}
+
+/* Background image container */
+.hero-bg {
+    height: 80vh;                  /* 80% of viewport height */
+    background-size: cover;        /* Image fills container */
+    background-position: center;   /* Center image */
+    display: flex;
+    align-items: center;           /* Vertical center */
+    justify-content: center;       /* Horizontal center */
+}
+
+/* Dark overlay for text readability */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    padding: 3rem;                 /* Space inside overlay */
+    text-align: center;
+    border-radius: 10px;           /* Rounded corners */
+}
+
+/* Main hero title */
+.hero-title {
+    color: white;
+    font-size: 3.5rem;             /* Large text */
+    margin-bottom: 2rem;           /* Space below title */
+    font-weight: normal;           /* Not bold */
+}
+
+/* "Enter the Gallery" button */
+.hero-button {
+    display: inline-block;         /* Allows padding */
+    background-color: #ffcc00;     /* Golden yellow */
+    color: #2a2a2a;                /* Dark text */
+    padding: 1rem 2.5rem;          /* Button size */
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 30px;           /* Rounded ends (pill shape) */
+    transition: background-color 0.3s; /* Hover effect */
+}
+
+.hero-button:hover {
+    background-color: #e6b800;     /* Darker yellow on hover */
+}
+
+/* ==================== 4. PAGE TITLES ==================== */
+/* Consistent page headings (Gallery, Biography, Contact) */
+.page-title {
+    text-align: center;
+    padding: 3rem 0 2rem;          /* Space above/below */
+    font-size: 2.8rem;             /* Large but smaller than hero */
+    color: #2a2a2a;                /* Dark gray */
+}
+
+/* ==================== 5. GALLERY PAGE STYLES ==================== */
+/* Container for painting grid */
+.gallery-container {
+    max-width: 1200px;             /* Don't get too wide */
+    margin: 0 auto 4rem;           /* Center with bottom space */
+    padding: 0 2rem;               /* Side padding */
+    display: grid;                 /* CSS Grid layout */
+    /* Responsive: auto-adjust columns, min 250px each */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;                     /* Space between cards */
+}
+
+/* Individual painting card */
+.gallery-item {
+    background: white;
+    border-radius: 8px;            /* Rounded corners */
+    overflow: hidden;              /* Keep image inside borders */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: transform 0.3s;    /* Animation for hover */
+}
+
+/* Hover effect: lifts card */
+.gallery-item:hover {
+    transform: translateY(-5px);   /* Move up 5 pixels */
+}
+
+/* Painting images */
+.gallery-img {
+    width: 100%;                   /* Fill container */
+    height: 300px;                 /* Fixed height */
+    object-fit: cover;             /* Crop to fill without distortion */
+    display: block;                /* Remove extra space below */
+}
+
+/* Painting title below image */
+.gallery-info {
+    padding: 1.5rem;              /* Space inside card */
+    text-align: center;
+}
+
+.gallery-info h3 {
+    font-size: 1.4rem;
+    color: #2a2a2a;
+}
+
+/* ==================== 6. BIOGRAPHY PAGE LAYOUT ==================== */
+/* Main container for side-by-side layout */
+.biography-container {
+    max-width: 1200px;             /* Wider for two columns */
+    margin: 0 auto 4rem;           /* Center with bottom space */
+    padding: 0 2rem;               /* Side padding */
+    display: flex;                 /* Flexbox for columns */
+    flex-direction: column;        /* Stack on mobile */
+    gap: 3rem;                     /* Space between columns */
+}
+
+/* ==================== 7. BIOGRAPHY PORTRAIT COLUMN ==================== */
+/* Left column: Portrait image */
+.portrait-column {
+    text-align: center;            /* Center image and caption */
+    flex: 1;                       /* Take equal space */
+}
+
+/* Portrait image styling */
+.portrait-column img {
+    width: 100%;                   /* Responsive width */
+    max-width: 450px;              /* Maximum size */
+    height: auto;                  /* Maintain proportions */
+    border-radius: 8px;            /* Slightly rounded corners */
+    display: block;                /* Remove extra space */
+    margin: 0 auto;                /* Center horizontally */
+}
+
+/* Portrait caption text */
+.portrait-caption {
+    margin-top: 1rem;              /* Space above caption */
+    font-style: italic;            /* Italic style */
+    color: #666;                   /* Medium gray */
+    font-size: 1.1rem;             /* Slightly larger */
+}
+
+/* ==================== 8. BIOGRAPHY TEXT COLUMN ==================== */
+/* Right column: Biography text */
+.text-column {
+    flex: 1;                       /* Take equal space */
+}
+
+/* Biography paragraphs */
+.text-column p {
+    margin-bottom: 1.5rem;         /* Space between paragraphs */
+    font-size: 1.2rem;             /* Readable size */
+    line-height: 1.8;              /* Comfortable line spacing */
+}
+
+/* ==================== 9. CONTACT PAGE STYLES ==================== */
+/* Contact form container */
+.contact-content {
+    max-width: 600px;              /* Narrower than other pages */
+    margin: 0 auto 4rem;           /* Center with bottom space */
+    padding: 0 2rem;               /* Side padding */
+}
+
+/* Text above form */
+.contact-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;         /* Space before form */
+    color: #555;                   /* Medium gray */
+}
+
+/* Form styling */
+.contact-form {
+    background: white;
+    padding: 2.5rem;               /* Space inside form */
+    border-radius: 10px;           /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Form field groups */
+.form-group {
+    margin-bottom: 1.8rem;         /* Space between fields */
+}
+
+/* Form labels */
+.form-group label {
+    display: block;                /* On its own line */
+    margin-bottom: 0.5rem;         /* Space below label */
+    font-weight: bold;
+    color: #2a2a2a;
+}
+
+/* Input fields and textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;                   /* Full width */
+    padding: 0.8rem;               /* Space inside fields */
+    border: 1px solid #ddd;        /* Light border */
+    border-radius: 5px;            /* Slightly rounded */
+    font-size: 1rem;
+    font-family: 'Georgia', serif; /* Match site font */
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;                   /* Full width */
+    padding: 1rem;
+    background-color: #2a2a2a;     /* Dark charcoal */
+    color: white;
+    border: none;                  /* Remove default border */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;               /* Hand cursor on hover */
+    transition: background-color 0.3s; /* Hover effect */
+}
+
+.submit-btn:hover {
+    background-color: #444;        /* Lighter on hover */
+}
+
+/* ==================== 10. FOOTER ==================== */
+/* Bottom section on all pages */
+.site-footer {
+    background-color: #2a2a2a;     /* Same as header */
+    color: #f5f5f5;                /* Light text */
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;              /* Push to bottom when content is short */
+}
+
+/* ==================== 11. RESPONSIVE DESIGN ==================== */
+/* Mobile styles (screens smaller than 768px) */
+@media (max-width: 768px) {
+    /* Stack navigation vertically */
+    .main-nav ul {
+        flex-direction: column;    /* Vertical stack */
+        gap: 1rem;                 /* Less space */
+        align-items: center;       /* Center items */
+    }
+    
+    /* Smaller hero title */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Smaller page titles */
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    /* Gallery: single column */
+    .gallery-container {
+        grid-template-columns: 1fr; /* One column */
+        padding: 0 1rem;           /* Less side padding */
+    }
+    
+    /* Biography: stack portrait above text */
+    .biography-container {
+        flex-direction: column;    /* Vertical stack */
+        gap: 2rem;                 /* Less space */
+    }
+    
+    /* Smaller portrait on mobile */
+    .portrait-column img {
+        max-width: 300px;          /* Smaller size */
+    }
+}
+
+/* ==================== 12. DESKTOP LAYOUT ==================== */
+/* Desktop styles (screens 768px and larger) */
+@media (min-width: 768px) {
+    /* Biography: side-by-side layout */
+    .biography-container {
+        flex-direction: row;       /* Horizontal layout */
+        align-items: flex-start;   /* Align to top */
+        gap: 4rem;                 /* More space between columns */
+    }
+}

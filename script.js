@@ -1,5 +1,6 @@
 /* ============================================
    Vincent Gallery - Contact Form Handler
+   Updated to use local API instead of JSONPlaceholder
    ============================================ */
 
 // Wait for page to load
@@ -41,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // ===== API CALL =====
+            // ===== API CALL TO LOCAL SERVER =====
             try {
-                // 🎯 TEST API URL (WORKS IMMEDIATELY)
-                const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+                // ✅ USE LOCAL API INSTEAD OF JSONPLACEHOLDER
+                const API_URL = 'http://localhost:3000/api/contact';
                 
                 // Data to send
                 const formData = {
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     timestamp: new Date().toISOString()
                 };
                 
-                console.log('📤 Sending to API:', formData);
+                console.log('📤 Sending to local API:', formData);
                 
                 // Send to API
                 const response = await fetch(API_URL, {
@@ -72,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('✅ API Response:', result);
                     
                     // Success message
-                   alert('✅ Thank you! Your message has been received.');
+                    alert('✅ Thank you! Your message has been received and stored in our system.');
+                    
                     // Clear form
                     contactForm.reset();
                     
@@ -82,16 +84,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
             } catch (error) {
-                // ===== FALLBACK IF API FAILS =====
-                console.error('API Error:', error);
-                console.log('📝 Form Data (not sent):', {
+                // ===== FALLBACK IF LOCAL API FAILS =====
+                console.error('Local API Error:', error);
+                console.log('📝 Form Data (not sent, local API might not be running):', {
                     name: name,
                     email: email,
                     message: message
                 });
                 
                 // User-friendly message
-                alert('📝 Demo Mode: Form submitted successfully!\n\nIn a real website, this would be sent to:\n1. Formspree.io (free)\n2. Or your own server\n\nData logged to console.');
+                alert('⚠️ Form submitted in demo mode.\n\nTo enable full functionality:\n1. Run the API server (node server.js)\n2. Update API_URL in this script\n3. Data was logged to console.');
                 
                 // Still clear form
                 contactForm.reset();
@@ -109,5 +111,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
+    }
+    
+    // ===== BONUS: LOAD GALLERY DATA FROM API =====
+    // This is optional - demonstrates API usage beyond contact form
+    async function loadGalleryData() {
+        try {
+            const response = await fetch('http://localhost:3000/api/gallery');
+            if (response.ok) {
+                const data = await response.json();
+                console.log('🎨 Gallery data loaded from API:', data);
+                // You could use this data to dynamically populate the gallery page
+            }
+        } catch (error) {
+            console.log('Gallery API not available, using static data');
+        }
+    }
+    
+    // Call on Gallery page
+    if (window.location.pathname.includes('gallery.html')) {
+        loadGalleryData();
     }
 });
